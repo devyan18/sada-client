@@ -4,13 +4,13 @@ import axios from 'axios'
 import { useAuth0 } from "@auth0/auth0-react";  
 import MapEstaciones from './MapEstaciones';
 import { Spinner } from 'react-bootstrap';
+import { url } from '../services/api';
 
 function TableEstaciones(props) {
    const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [datos,setData] = useState([])
-  const url = "https://api-remaf.onrender.com"
   const { user, isAuthenticated } = useAuth0(); 
   const [loading,setLoading] = useState(false)
 

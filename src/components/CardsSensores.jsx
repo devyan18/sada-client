@@ -7,7 +7,7 @@ import Chart7days from './Chart7days.jsx'
 export default function CardsSensores(props) {
   const [mediciones,setMediciones] = useState([])
   const [loading,setLoading] = useState(false)
-  const url = "https://api-remaf.onrender.com"
+  const url = "https://remaf-server-production.up.railway.app"
 
   const  apiGetMediciones=async()=>{
     setLoading(true)

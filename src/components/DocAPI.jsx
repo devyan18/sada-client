@@ -4,6 +4,7 @@ import Alert from 'react-bootstrap/Alert';
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { url } from '../services/api';
 function DocApi() {
   const [copied1, setCopied1 ] = useState(false);
   const [copied2, setCopied2 ] = useState(false);
@@ -46,14 +47,14 @@ function DocApi() {
                 <Card.Title>Ejemplo de imprementación</Card.Title>
                 <Form.Control id='textCopied' className='hideen' disabled hidden />
                 <Card.Text>
-                <span className="brush: js notranslate"><code><span className="token function">fetch</span><span className="token punctuation">(</span><span className="token string">'https://api-remaf.onrender.com/api/'</span><span className="token punctuation">)</span><br/>
+                <span className="brush: js notranslate"><code><span className="token function">fetch</span><span className="token punctuation">(</span><span className="token string">'{url}/api/'</span><span className="token punctuation">)</span><br/>
           <span className="token punctuation">.</span><span className="token function">then</span><span className="token punctuation">(</span><span className="token punctuation">(</span><span className="token parameter">response</span><span className="token punctuation">)</span> <span className="token operator">=&gt;</span> response<span className="token punctuation">.</span><span className="token function">json</span><span className="token punctuation">(</span><span className="token punctuation">)</span><span className="token punctuation">)</span><br/>
           <span className="token punctuation">.</span><span className="token function">then</span><span className="token punctuation">(</span><span className="token punctuation">(</span><span className="token parameter">data</span><span className="token punctuation">)</span> <span className="token operator">=&gt;</span> console<span className="token punctuation">.</span><span className="token function">log</span><span className="token punctuation">(</span>data<span className="token punctuation">)</span><span className="token punctuation">)</span><span className="token punctuation">;</span>
         </code></span>
                 </Card.Text>
-                <CopyToClipboard text="fetch('https://api-remaf.onrender.com/api/')
+                <CopyToClipboard text={`fetch("${url}/api/")
                 .then((response) => response.json())
-                .then((data) => console.log(data));">
+                .then((data) => console.log(data));`}>
                 {copied1 ? <Alert key='success' variant='success'><i className ="bi bi-clipboard-check"></i> ¡Copiado!</Alert> : <Button onClick={() =>showMsgCopy(1)} variant="success"><i className="bi bi-clipboard2"></i>Copiar</Button> }
                 </CopyToClipboard>
               </Card.Body>
@@ -66,14 +67,14 @@ function DocApi() {
                 <Card.Title>Ejemplo de imprementación</Card.Title>
                 <Form.Control id='textCopied' className='hideen' disabled hidden />
                 <Card.Text>
-                <span className="brush: js notranslate"><code><span className="token function">fetch</span><span className="token punctuation">(</span><span className="token string">'https://api-remaf.onrender.com/api/estaciones'</span><span className="token punctuation">)</span><br/>
+                <span className="brush: js notranslate"><code><span className="token function">fetch</span><span className="token punctuation">(</span><span className="token string">'{url}/api/estaciones'</span><span className="token punctuation">)</span><br/>
           <span className="token punctuation">.</span><span className="token function">then</span><span className="token punctuation">(</span><span className="token punctuation">(</span><span className="token parameter">response</span><span className="token punctuation">)</span> <span className="token operator">=&gt;</span> response<span className="token punctuation">.</span><span className="token function">json</span><span className="token punctuation">(</span><span className="token punctuation">)</span><span className="token punctuation">)</span><br/>
           <span className="token punctuation">.</span><span className="token function">then</span><span className="token punctuation">(</span><span className="token punctuation">(</span><span className="token parameter">data</span><span className="token punctuation">)</span> <span className="token operator">=&gt;</span> console<span className="token punctuation">.</span><span className="token function">log</span><span className="token punctuation">(</span>data<span className="token punctuation">)</span><span className="token punctuation">)</span><span className="token punctuation">;</span>
         </code></span>
                 </Card.Text>
-                <CopyToClipboard text="fetch('https://api-remaf.onrender.com/api/estaciones')
+                <CopyToClipboard text={`fetch("${url}/api/estaciones")
                 .then((response) => response.json())
-                .then((data) => console.log(data));">
+                .then((data) => console.log(data));`}>
                   {copied2 ? <Alert key='success' variant='success'><i className ="bi bi-clipboard-check"></i> ¡Copiado!</Alert> : <Button onClick={() =>showMsgCopy(2)} variant="success"><i className="bi bi-clipboard2"></i>Copiar</Button> }
         
                 </CopyToClipboard>
@@ -87,14 +88,14 @@ function DocApi() {
                 <Card.Title>Ejemplo de imprementación</Card.Title>
                 <Form.Control id='textCopied' className='hideen' disabled hidden />
                 <Card.Text>
-                <span className="brush: js notranslate"><code><span className="token function">fetch</span><span className="token punctuation">(</span><span className="token string">'https://api-remaf.onrender.com/api/$id/$fechaDesde/$fechaHasta'</span><span className="token punctuation">)</span><br/>
+                <span className="brush: js notranslate"><code><span className="token function">fetch</span><span className="token punctuation">(</span><span className="token string">'{url}/api/$id/$fechaDesde/$fechaHasta'</span><span className="token punctuation">)</span><br/>
           <span className="token punctuation">.</span><span className="token function">then</span><span className="token punctuation">(</span><span className="token punctuation">(</span><span className="token parameter">response</span><span className="token punctuation">)</span> <span className="token operator">=&gt;</span> response<span className="token punctuation">.</span><span className="token function">json</span><span className="token punctuation">(</span><span className="token punctuation">)</span><span className="token punctuation">)</span><br/>
           <span className="token punctuation">.</span><span className="token function">then</span><span className="token punctuation">(</span><span className="token punctuation">(</span><span className="token parameter">data</span><span className="token punctuation">)</span> <span className="token operator">=&gt;</span> console<span className="token punctuation">.</span><span className="token function">log</span><span className="token punctuation">(</span>data<span className="token punctuation">)</span><span className="token punctuation">)</span><span className="token punctuation">;</span>
         </code></span>
                 </Card.Text>
-                <CopyToClipboard text="fetch('https://api-remaf.onrender.com/api/$id/$fechaDesde/$fechaHasta')
+                <CopyToClipboard text={`fetch("${url}/api/$id/$fechaDesde/$fechaHasta")
                 .then((response) => response.json())
-                .then((data) => console.log(data));">
+                .then((data) => console.log(data));`}>
                   {copied3 ? <Alert key='success' variant='success'><i className ="bi bi-clipboard-check"></i> ¡Copiado!</Alert> : <Button onClick={() =>showMsgCopy(3)} variant="success"><i className="bi bi-clipboard2"></i>Copiar</Button> }
         
                 </CopyToClipboard>

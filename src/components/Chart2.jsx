@@ -8,6 +8,7 @@ function createData(time, amount) {
   return { time, amount };
 }
 import axios from 'axios' 
+import { url } from '../services/api';
 const data = [
 
 [ '00:00', 0] ,
@@ -32,7 +33,7 @@ export default function Chart() {
   }
   const apiGetMediciones = async () => {
     var arrayData = []
-    const resp = await axios.get(`https://api-remaf.onrender.com/api/1/2022-10-01/2022-12-01`)
+    const resp = await axios.get(`${url}/api/1/2022-10-01/2022-12-01`)
     resp.data.map((row) => {
                 return (
                   arrayData.push([row.temperatura_sensores,formatearFecha(row.date_estaciones)])

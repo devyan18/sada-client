@@ -36,6 +36,7 @@ function createData(time, amount) {
   return { time, amount };
 }
 import axios from 'axios' 
+import { url } from '../services/api';
    
 
 export default function ChartLine(props) {
@@ -48,7 +49,7 @@ export default function ChartLine(props) {
   }
   const apiGetMediciones = async () => {
     var arrayData = []
-    const resp = await axios.get(`https://api-remaf.onrender.com/api/estaciones/week/stadist/${props.estacionActual}`)
+    const resp = await axios.get(`${url}/api/estaciones/week/stadist/${props.estacionActual}`)
    /*resp.data.map((row) => {
                 return ( 
                     map((row) => {

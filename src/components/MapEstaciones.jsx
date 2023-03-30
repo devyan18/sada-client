@@ -11,10 +11,10 @@ import {
   NavLink,
 } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
+import { url } from '../services/api'
  
 function MapEstaciones() { 
-    const [datos,setData] = useState([])
-    const url = "https://api-remaf.onrender.com" 
+    const [datos,setData] = useState([]) 
     const [loading,setLoading] = useState(false)
     const posticionFormosaCentral = [-24.635700, -60.293757]
     const  apiGetEstaciones=async()=>{
